@@ -81,10 +81,18 @@ function addError(input) {
 	const requiredText = document.createElement('div')
 	requiredText.innerHTML = requiredAlert
 	requiredText.classList.add('required-text')
-	input.parentElement.appendChild(requiredText)
+	const requiredTextEl = input.parentElement.lastElementChild
+
+	if (!requiredTextEl.classList.contains('required-text')) {
+		input.parentElement.appendChild(requiredText)
+	}
 }
 
 function removeError(input) {
 	input.classList.remove("error");
 	input.parentElement.classList.remove("error");
+	const requiredTextEl = input.parentElement.lastElementChild
+	if (requiredTextEl.classList.contains('required-text')) {
+		requiredTextEl.remove()
+	}
 }
