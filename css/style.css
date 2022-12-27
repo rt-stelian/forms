@@ -379,4 +379,5 @@ textarea.form-input {
 .required-text {
   padding: 10px;
   text-shadow: 0 2px 0 rgba(60, 0, 0, 0.722);
+  display: inline-block;
 }

@@ -52,9 +52,7 @@ function uploadFile(file) {
 }
 
 function requiredAlerts() {
-	if (error === 0) {
-		console.log("no errors");
-	} else if (error === 1) {
+	if (error === 1) {
 		req.forEach((el) => {
 			const inputName = el.dataset.name;
 			const requiredAlert = `${inputName} field is empty!`;
@@ -79,7 +77,7 @@ function addError(input) {
 
 	const inputName = input.dataset.name;
 	const requiredAlert = `${inputName} is required!`
-	const requiredText = document.createElement('div')
+	const requiredText = document.createElement('span')
 	requiredText.innerHTML = requiredAlert
 	requiredText.classList.add('required-text')
 	const requiredTextEl = input.parentElement.lastElementChild
