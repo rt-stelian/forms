@@ -5,6 +5,7 @@ const req = document.querySelectorAll("._required");
 const formImage = document.querySelector("#formImage");
 const formPreview = document.querySelector("#formPreview");
 
+
 let error = 0;
 
 form.addEventListener("submit", formSend);
@@ -95,4 +96,27 @@ function removeError(input) {
 	if (requiredTextEl.classList.contains('required-text')) {
 		requiredTextEl.remove()
 	}
+}
+
+const txtArea = document.querySelector('#formMessage')
+const txtLimit = txtArea.getAttribute('maxlength')
+const txtCount = txtArea.nextElementSibling
+txtCount.innerHTML = txtLimit
+txtCount.style = 'display:none'
+
+txtArea.addEventListener('focus', () => {
+	txtCount.style = 'display:block'
+})
+txtArea.addEventListener('blur', () => {
+	txtCount.style = 'display:none'
+});
+
+
+txtArea.addEventListener("keyup", txtLimitCount)
+txtArea.addEventListener("keydown", (ev) => ev.repeat ? txtLimitCount() : 'return');
+
+function txtLimitCount() {
+
+	const countResults = txtLimit - txtArea.value.length;
+	txtCount.innerHTML = countResults;
 }
