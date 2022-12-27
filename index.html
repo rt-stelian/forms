@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Forms</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="form-inner">
+				<form action="#" id="form" class="form">
+					<h1 class="form-title">Form</h1>
+					<div class="form-item">
+						<label for="formName" class="form-label">Name*</label>
+						<input type="text" id="formName" data-name="Name" name="Name" class="form-input _required" placeholder="Your name" />
+					</div>
+					<div class="form-item">
+						<label for="formEmail" class="form-label">Email*</label>
+						<input type="text" id="formEmail" data-name="Email" name="Email" placeholder="example: youremail@mail.com" class="form-input _required _email" />
+					</div>
+					<div class="form-item">
+						<div class="form-label">Left hand or Right hand?</div>
+						<div class="options">
+							<div class="options-item">
+								<input checked type="radio" id="formRightHanded" name="hand" class="options-input" />
+								<label for="formRightHanded" class="optins-label"><span>Right </span> </label>
+							</div>
+							<div class="options-item">
+								<input type="radio" id="formLeftHanded" name="hand" class="options-input" />
+								<label for="formLeftHanded" class="optins-label"><span>Left </span> </label>
+							</div>
+						</div>
+					</div>
+					<div class="form-item">
+						<label for="formMessage" class="form-label">Your message</label>
+						<textarea placeholder="Your message, less than 180 symbols" name="message" id="formMessage" class="form-input"></textarea>
+					</div>
+					<div class="form-item">
+						<div class="form-item">
+							<div class="form-label">Your age</div>
+							<select name="age" class="select">
+								<option value="from 18 to 25" selected>Young</option>
+								<option value="from 25 to 45">Old</option>
+								<option value="from 45">Super Old</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-item">
+						<div class="form-label">Yor photo</div>
+						<div class="file">
+							<div class="file-item">
+								<input type="file" name="image" class="file-input" accept=".jpg, .png, .gif" id="formImage" />
+								<div class="file-button">Select</div>
+								<div id="formPreview" class="file-preview"></div>
+							</div>
+						</div>
+					</div>
+					<div class="form-item">
+						<div class="checkbox">
+							<input type="checkbox" checked id="formAgreement" data-name="Agreement" name="agreement" class="checkbox-input _required" />
+							<label for="formAgreement" class="checkbox-label"><span>i agree</span></label>
+						</div>
+					</div>
+					<button type="submit" class="form-button">Submit</button>
+				</form>
+			</div>
+		</div>
+		<script src="js.js"></script>
+	</body>
+</html>
